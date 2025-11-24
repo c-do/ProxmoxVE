@@ -19,9 +19,9 @@ $STD apt-get install -y \
     build-essential
 msg_ok "Installed Dependencies"
 
-git clone -q https://github.com/Fallenbagel/jellyseerr.git /opt/jellyseerr
-cd /opt/jellyseerr
-$STD git checkout main
+git clone -q https://github.com/seerr-team/seerr /opt/seerr
+cd /opt/seerr
+$STD git checkout develop
 
 pnpm_desired=$(grep -Po '"pnpm":\s*"\K[^"]+' /opt/jellyseerr/package.json)
 NODE_VERSION="22" NODE_MODULE="pnpm@$pnpm_desired" setup_nodejs
